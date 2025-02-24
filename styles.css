@@ -11,7 +11,7 @@
 /* General Styles */
 body {
     font-family: 'Lora', serif;
-    background: linear-gradient(135deg, var(--deep-blue), var(--royal-blue));
+    background: linear-gradient(135deg, var(--deep-blue), var(--white));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +58,7 @@ h2 {
 /* Input Fields */
 input {
     padding:14px;
-    margin: 12px 2px;
+    margin: 12px;
     border: 1px solid rgba(230, 190, 80, 0.3);
     border-radius: 10px;
     font-size: 16px;

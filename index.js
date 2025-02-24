@@ -40,9 +40,15 @@ app.get("/fields", (req, res) => {
         }
 
         // Extract field names, excluding 'id', 'email', 'password', 'created_at'
+        // const fieldNames = results
+        //     .map(row => row.Field)
+        //     .filter(field => !["id", "email", "password", "created_at"].includes(field));
+
+        // this makes it so that email and password are no longer hardcoded and generated dynamically as per DB schema
+        
         const fieldNames = results
-            .map(row => row.Field)
-            .filter(field => !["id", "email", "password", "created_at"].includes(field));
+        .map(row => row.Field)
+        .filter(field => !["id", "created_at"].includes(field));
 
         res.json(fieldNames);
     });
@@ -96,6 +102,37 @@ app.post("/register", async (req, res) => {
         res.status(500).json({ error: "Server error." });
     }
 });
+
+// rename field endpoint
+app.post("/admin/rename-field", (req, res) => {
+    const { oldName, newName } = req.body;
+    const sql = `ALTER TABLE users CHANGE \`${oldName}\` \`${newName}\` VARCHAR(255)`;
+
+    db.query(sql, (err) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send("Error renaming field");
+        }
+        res.send("Field renamed successfully");
+    });
+});
+
+
+// delete field endpoint
+app.post("/admin/delete-field", (req, res) => {
+    const { fieldName } = req.body;
+    const sql = `ALTER TABLE users DROP COLUMN \`${fieldName}\``;
+
+    db.query(sql, (err) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send("Error deleting field");
+        }
+        res.send("Field deleted successfully");
+    });
+});
+
+
 
 
 
