@@ -16,11 +16,11 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public"))); // Serve static frontend files
 
-
+// Credentials
 const db = mysql.createConnection({
     host: "localhost",
-    user: "admin",       // user = admin
-    password: "Admin123#",       // PASSWD = Admin123#
+    user: "root",       // user = admin
+    password: "",       // PASSWD = Admin123#
     database: "register_details"  //DB NAME = register_details
 });
 
