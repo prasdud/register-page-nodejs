@@ -53,7 +53,7 @@ document.getElementById("registerForm").addEventListener("submit", (event) => {
         dataObject[key] = value;
     });
 
-    console.log("Form Data:", dataObject); // ✅ Log form data before sending
+    console.log("Form Data:", dataObject); // Log form data before sending
 
     fetch(event.target.action, {
         method: "POST",
