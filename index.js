@@ -19,8 +19,8 @@ app.use(express.static(path.join(__dirname, "public"))); // Serve static fronten
 // Credentials
 const db = mysql.createConnection({
     host: "localhost",
-    user: "root",       // user = admin
-    password: "",       // PASSWD = Admin123#
+    user: "admin",       // user = admin
+    password: "Admin123#",       // PASSWD = Admin123#
     database: "register_details"  //DB NAME = register_details
 });
 
