@@ -1,0 +1,11 @@
+{
+  "name": "register-nodejs",
+  "version": "1.0.0",
+  "description": "a simple register page with admin dashboard to add more entities in register page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "prasdud",
+  "license": "ISC"
+}
