@@ -16,3 +16,18 @@ CREATE TABLE IF NOT EXISTS fields (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) UNIQUE NOT NULL
 );
+ALTER TABLE users ADD COLUMN email VARCHAR(255) NOT NULL UNIQUE;
+ALTER TABLE users ADD COLUMN password VARCHAR(255) NOT NULL;
+
+ALTER TABLE users DROP COLUMN firstname;
+ALTER TABLE users DROP COLUMN Lastname;
+ALTER TABLE users DROP COLUMN number;
+ALTER TABLE users DROP COLUMN social_security_number;
+ALTER TABLE users DROP COLUMN `hair color`;
+ALTER TABLE users DROP COLUMN `middle name`;
+ALTER TABLE users DROP COLUMN fathers_name;
+ALTER TABLE users DROP COLUMN `mothers name`;
+
+
+
+
